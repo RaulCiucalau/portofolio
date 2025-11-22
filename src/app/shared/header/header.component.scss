@@ -6,8 +6,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 48px;
-    gap : 48px;
+    height: 92px;
+    padding-top: 24px;
+    padding-right: 140px;
+    padding-bottom: 24px;
+    padding-left: 140px;
+    gap: 58px;
+
     a {
         text-decoration: none;
         font-size: 23px;
@@ -19,18 +24,35 @@ header {
     display: flex;
     gap: 48px;
     align-items: center;
+
+    .logo-title {
+        font-family: Handjet;
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 100%;
+        letter-spacing: 5px;
+    }
 }
 
 .page-sections {
     display: flex;
-    gap: 32px;
+    gap: 52px;
 }
 
 .translate-container {
     display: flex;
     gap: 6px;
-    align-items: center;
     cursor: pointer;
+
+    span {
+        font-family: Poppins;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 120%;
+        letter-spacing: 0%;
+    }
+
     a {
         font-weight: 700;
         font-size: 18px;
