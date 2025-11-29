@@ -27,6 +27,9 @@
 
     .title-section {
         max-width: 600px;
+        gap: 24px;
+        display: flex;
+        align-items: center;
 
         h1 {
             color: #E15544;
@@ -61,6 +64,7 @@
 
         .email,
         .phone {
+            cursor: pointer;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -68,6 +72,10 @@
             img {
                 width: 24px;
                 height: 24px;
+
+                &:hover {
+                    filter: brightness(0) saturate(100%) invert(77%) sepia(79%) saturate(2027%) hue-rotate(128deg) brightness(101%) contrast(98%);
+                }
             }
 
             span {
@@ -77,6 +85,19 @@
                 line-height: 120%;
             }
         }
+    }
+}
+
+.arrow-up {
+    position: relative;
+    left: 254px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 4px;
+
+    &:hover {
+        filter: brightness(0) saturate(100%) invert(77%) sepia(79%) saturate(2027%) hue-rotate(128deg) brightness(101%) contrast(98%);
+        border: 1px solid #02F4BF;
     }
 }
 
@@ -118,7 +139,10 @@
 
         &:focus {
             outline: none;
-            border-color: #E15544;
+
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 }
@@ -133,27 +157,38 @@
 .privacy-check {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 5px;
+    cursor: pointer;
+
+    .checkbox {
+        background-image: url("/assets/contact-section/check_box_outline_blank.svg");
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &:hover .checkbox {
+        background-image: url("/assets/contact-section/check_box_outline_hover.svg");
+    }
 
     label {
         color: #02F4BF;
         font-weight: 400;
         font-size: 14px;
         line-height: 120%;
+        cursor: pointer;
 
         a {
             color: #E15544;
             text-decoration: none;
+
+            &:hover {
+                font-weight: 700;
+            }
         }
     }
 }
-
-.checkbox {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
 
 .send-button {
     width: 104px;
