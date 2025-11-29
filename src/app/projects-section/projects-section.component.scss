@@ -80,6 +80,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        &:hover {
+            color: #02F4BF;
+            transition: ease-in-out 300ms;
+        }
 
     }
 
@@ -98,5 +102,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        &:hover {
+            color: #E15544;
+            transition: ease-in-out 300ms;
+        }
     }
 }
