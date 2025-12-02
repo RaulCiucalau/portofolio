@@ -75,11 +75,10 @@
 .arrow-down {
     cursor: pointer;
     position: absolute;
+    padding: 4px;
 
     &:hover {
         filter: brightness(0) saturate(100%) invert(70%) sepia(52%) saturate(2878%) hue-rotate(131deg) brightness(101%) contrast(97%);
         border: 1px solid #02F4BF;
-        border-radius: 4px;
-        padding: 4px;
     }
 }

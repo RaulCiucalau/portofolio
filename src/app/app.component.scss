@@ -1,18 +1,5 @@
-app-myskills-section, app-whyme-section {
-    display: block;
-    margin-top: 104px;
-    height: auto;
-}
-
-app-references-section {
-    display: block;
-    margin-top: 37px;
-    height: auto;
-}
-
-app-contact-section {
-    display: block;
-    margin-top: 104px;
-    margin-bottom: 88px;
-    height: auto;
+app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
