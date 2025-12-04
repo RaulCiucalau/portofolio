@@ -8,7 +8,7 @@ import { ContactSectionComponent } from '../contact-section/contact-section.comp
 import { TranslationService } from '../services/translation.service';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-main-page-de',
   standalone: true,
   imports: [
     HeroSectionComponent,
@@ -18,14 +18,14 @@ import { TranslationService } from '../services/translation.service';
     ReferencesSectionComponent,
     ContactSectionComponent
   ],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.scss'
+  templateUrl: './main-page-de.component.html',
+  styleUrl: './main-page-de.component.scss'
 })
-export class MainPageComponent implements OnInit {
+export class MainPageDeComponent implements OnInit {
 
   constructor(private translationService: TranslationService) {}
 
   ngOnInit() {
-    this.translationService.setLanguage('en');
+    this.translationService.setLanguage('de');
   }
 }
