@@ -68,5 +68,9 @@ header {
             color: #02F4BF;
             transition: ease-in-out 0.2s;
         }
+
+        &.active {
+            color: #02F4BF;
+        }
     }
 }

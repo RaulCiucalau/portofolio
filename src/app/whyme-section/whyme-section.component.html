@@ -4,7 +4,7 @@
             <img class="photo1" src="./assets/whyme-section/IMG_2741.JPG" alt="Photo">
             <div class="info-container">
                 <div class="text">
-                    <h2>Why Me?</h2>
+                    <h2>{{ 'whyme.title' | translate }}</h2>
                     <div class="description">
                         <p>
                             Write some information about yourself that is IT related. Why are you passionate about
@@ -17,17 +17,17 @@
                 <div class="about-me">
                     <div class="about-me-text">
                         <div class="row">
-                            <span>I am</span>
+                            <span [innerHTML]="'whyme.iam' | translate"></span>
                             <div class="card">
                                 <div class="location-icon"></div>
-                                <span class="text">located in Freiburg</span>
+                                <span class="text">{{ 'whyme.location' | translate }}</span>
                             </div>
                         </div>
                         <div class="row row--relocate">
                             <img src="./assets/whyme-section/arrow-down-right.svg" alt="Arrow Down Right">
                             <div class="card card--relocate">
                                 <div class="baggage-icon"></div>
-                                <span class="text">open to relocate</span>
+                                <span class="text">{{ 'whyme.relocate' | translate }}</span>
                             </div>
                         </div>
 
@@ -36,7 +36,7 @@
                             <div class="card-container">
                                 <div class="card laptop">
                                     <div class="laptop-icon"></div>
-                                    <span class="text">open to work remote</span>
+                                    <span class="text">{{ 'whyme.remote' | translate }}</span>
                                 </div>
                                 <img src="./assets/whyme-section/arrow-up.svg" alt="Arrow Down Right">
                             </div>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#contact"><div class="contact-button">Let's talk</div></a>
+                <a href="#contact"><div class="contact-button">{{ 'whyme.button' | translate }}</div></a>
             </div>
         </div>
     </div>
