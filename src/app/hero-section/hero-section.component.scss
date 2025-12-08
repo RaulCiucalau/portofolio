@@ -68,14 +68,14 @@
     justify-content: flex-end;
 
     h2 {
-        font-size: clamp(20px, 2.5vw + 10px, 54px);
+        font-size: clamp(24px, 2.5vw + 10px, 54px);
         font-weight: 500;
         line-height: 1;
         margin: 0;
     }
 
     h1 {
-        font-size: clamp(28px, 4vw + 10px, 82px);
+        font-size: clamp(40px, 4vw + 10px, 82px);
         font-weight: 700;
         line-height: 0.9;
         margin: 0;
@@ -113,7 +113,7 @@
     }
 
     .photo1 {
-        max-width: 450px;
+        max-width: 494px;
     }
 }
 
@@ -146,7 +146,6 @@
 
 @media (max-width: 767px) {
     .main-container {
-        height: auto;
         padding-left: clamp(10px, 3vw, 16px);
         padding-right: clamp(10px, 3vw, 16px);
     }
@@ -170,7 +169,20 @@
 
     .photo1 {
         order: 1;
-        width: clamp(300px, 58vw, 500px);
     }
 }
 
+
+@media (max-width: 510px) {
+    .photo1 {
+        width: clamp(280px, 80vw, 500px);
+    }
+}
+
+@media (max-width: 348px) {
+    .title {
+        h1 {
+            font-size: 35px;
+        }
+    }
+}

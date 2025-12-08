@@ -3,14 +3,26 @@
         <a (click)="navigateToSection($event, 'main')" style="cursor: pointer;">
             <div class="logo-title">&lt;RC&gt;</div>
         </a>
-        <div class="page-sections">
+        <div class="page-sections" [class.open]="menuOpen">
             <a (click)="navigateToSection($event, 'whyme')" style="cursor: pointer;">{{ 'header.whyme' | translate }}</a>
             <a (click)="navigateToSection($event, 'myskills')" style="cursor: pointer;">{{ 'header.skills' | translate }}</a>
             <a (click)="navigateToSection($event, 'projects')" style="cursor: pointer;">{{ 'header.projects' | translate }}</a>
             <a (click)="navigateToSection($event, 'contact')" style="cursor: pointer;">{{ 'header.contact' | translate }}</a>
+            <div class="translate-container mobile">
+                <a class="translate" (click)="switchLanguage('de')"
+                    [class.active]="translationService.getCurrentLanguage() === 'de'">DE</a>
+                <span>|</span>
+                <a class="english-version" (click)="switchLanguage('en')"
+                    [class.active]="translationService.getCurrentLanguage() === 'en'">EN</a>
+            </div>
         </div>
     </div>
-    <div class="translate-container">
+    <div class="burger-menu" (click)="toggleMenu()" [class.open]="menuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="translate-container desktop">
         <a class="translate" (click)="switchLanguage('de')"
             [class.active]="translationService.getCurrentLanguage() === 'de'">DE</a>
         <span>|</span>
