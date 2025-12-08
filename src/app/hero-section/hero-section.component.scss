@@ -1,18 +1,12 @@
+#main {
+    margin-top: 58px;
+}
+
 .main-container {
     height: 554px;
-    padding-left: 105px;
-
-    .arrow-down {
-        cursor: pointer;
-        position: absolute;
-    }
-
-    .photo1 {
-        position: absolute;
-        width: 530px;
-        top: 0;
-        right: 53px;
-    }
+    padding-left: clamp(10px, 5vw, 100px);
+    padding-right: clamp(10px, 5vw, 100px);
+    box-sizing: border-box;
 }
 
 .content {
@@ -22,6 +16,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 100%;
+    height: 554px;
+    gap: 40px;
+    box-sizing: border-box;
 }
 
 .contact-button {
@@ -29,14 +35,14 @@
     position: absolute;
     cursor: pointer;
     color: #E15544;
-    top: 117px;
+    top: clamp(80px, 10vh, 117px);
     width: 50px;
     left: 0;
     padding: 15px 25px;
     border: 1px solid #02F4BF;
     background-color: transparent;
     font-family: 'Roboto Mono';
-    font-size: 18px;
+    font-size: clamp(16px, 1.3vw, 18px);
     font-weight: 500;
     line-height: 120%;
     display: flex;
@@ -45,7 +51,7 @@
     gap: 10px;
 
     &.english {
-        height: 172px;
+        height: clamp(150px, 12vw, 172px);
     }
 
     &:hover {
@@ -55,29 +61,38 @@
 }
 
 .title {
-    position: absolute;
-    left: 0;
-    top: 412px;
     color: #02F4BF;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     h2 {
-        font-size: 54px;
+        font-size: clamp(20px, 2.5vw + 10px, 54px);
         font-weight: 500;
-        line-height: 120%;
+        line-height: 1;
         margin: 0;
     }
 
     h1 {
-        font-size: 82px;
+        font-size: clamp(28px, 4vw + 10px, 82px);
         font-weight: 700;
-        line-height: 120%;
+        line-height: 0.9;
         margin: 0;
     }
+}
+
+.photo1 {
+    width: clamp(200px, 45vw, 530px);
+    max-width: calc(100% - 20px);
+    flex-shrink: 0;
 }
 
 .arrow-down {
     cursor: pointer;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 4px;
 
     &:hover {
@@ -85,3 +100,77 @@
         border: 1px solid #02F4BF;
     }
 }
+
+.arrow-container {
+    position: absolute;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .photo1 {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        gap: 14px;
+    }
+
+    .main-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .photo1 {
+        order: 1;
+        width: 430px;
+    }
+
+    .contact-link-container {
+        display: none;
+    }
+
+    .arrow-container {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        height: auto;
+        padding-left: clamp(10px, 3vw, 16px);
+        padding-right: clamp(10px, 3vw, 16px);
+    }
+
+    .content {
+        flex-direction: column;
+        padding-top: clamp(30px, 5vh, 40px);
+        padding-bottom: clamp(40px, 8vh, 60px);
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(20px, 5vw, 15px);
+    }
+
+    .title {
+        text-align: center;
+        order: 2;
+    }
+
+    .photo1 {
+        order: 1;
+        width: clamp(300px, 58vw, 500px);
+    }
+}
+
