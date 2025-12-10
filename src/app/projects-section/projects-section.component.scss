@@ -25,7 +25,7 @@
 }
 
 .links-responsive {
-    display: none;
+    display: none !important;
 }
 
 .reverse {
@@ -45,21 +45,21 @@
         font-weight: 700;
         font-size: 48px;
         line-height: 120%;
-        margin-bottom: 17px;
+        margin-bottom: 16px;
     }
 
     h3 {
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
     }
 
     p {
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
     }
 }
 
@@ -156,12 +156,8 @@
         display: none;
     }
 
-    .project-description {
-        margin-bottom: 0 !important;
-    }
-
     .links-responsive {
-        display: flex;
+        display: flex !important;
     }
 }
 
