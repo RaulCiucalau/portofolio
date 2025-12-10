@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .main-container {
     padding-inline: 131px;
 }
@@ -19,6 +24,10 @@
     }
 }
 
+.links-responsive {
+    display: none;
+}
+
 .reverse {
     flex-direction: row-reverse;
 }
@@ -30,7 +39,6 @@
 
 .project-info {
     position: relative;
-    bottom: 51px;
     color: #02F4BF;
 
     h2 {
@@ -81,6 +89,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         &:hover {
             color: #02F4BF;
             transition: ease-in-out 300ms;
@@ -103,9 +112,178 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         &:hover {
             color: #E15544;
             transition: ease-in-out 300ms;
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .main-container {
+        padding-inline: clamp(10px, 5vw, 20px);
+    }
+
+    .content {
+        gap: 40px;
+
+        .title-section {
+            font-size: clamp(32px, 6vw, 42px);
+            text-align: center;
+        }
+    }
+
+    .project-img {
+        order: 2;
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 500px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .project-description {
+        margin-bottom: 0 !important;
+    }
+
+    .links-responsive {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        padding-left: clamp(10px, 3vw, 16px);
+        padding-right: clamp(10px, 3vw, 16px);
+    }
+
+    .responsive-margin-top {
+        margin-top: 37px;
+    }
+
+    .content {
+        gap: clamp(20px, 5vw, 40px);
+
+        .title-section {
+            font-size: clamp(30px, 7vw, 28px);
+            font-weight: 700;
+        }
+    }
+
+    .project-info {
+        width: 400px;
+        max-width: 500px;
+
+        h2 {
+            font-size: clamp(24px, 5vw, 32px);
+            margin-bottom: clamp(16px, 2vw, 17px);
+        }
+
+        h3 {
+            font-size: clamp(18px, 2.5vw, 14px);
+            margin-bottom: clamp(24px, 3vw, 20px);
+        }
+
+        p {
+            font-size: clamp(16px, 2.5vw, 14px);
+            margin-bottom: clamp(24px, 3vw, 24px) !important;
+        }
+    }
+
+    .project-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-links {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: clamp(24px, 3vw, 16px);
+
+        .github-link,
+        .live-test-link {
+            
+            max-width: 150px;
+            padding: 12px 20px;
+            min-width: auto;
+            font-size: clamp(14px, 3vw, 16px);
+            height: 48px;
+        }
+
+        .github-link {
+            width: 98px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .project-info {
+        width: 100%;
+        max-width: 100%;
+
+        h2 {
+            font-size: clamp(22px, 5vw, 24px);
+        }
+    }
+
+    .project-links {
+
+        .github-link,
+        .live-test-link {
+            max-width: 120px;
+            padding: 10px 15px;
+            font-size: clamp(16px, 3vw, 14px);
+            height: 44px;
+        }
+
+        .github-link {
+            width: 98px !important;
+        }
+    }
+
+    .project-img {
+        width: 337px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .content {
+        gap: 20px;
+    }
+
+    .project-links {
+        gap: 10px;
+
+        .github-link,
+        .live-test-link {
+            max-width: 100px;
+            padding: 8px 12px;
+            font-size: 12px;
+            height: 40px;
+        }
+
+        .github-link {
+            width: 98px !important;
         }
     }
 }
