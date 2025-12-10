@@ -1,20 +1,22 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .main-container {
-    padding-left: 131px;
+    padding-left: clamp(10px, 5vw, 131px);
+    padding-right: clamp(10px, 5vw, 131px);
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: clamp(20px, 3vw, 32px);
 
     h2 {
         font-weight: 700;
-        font-size: 24px;
+        font-size: clamp(24px, 3vw, 24px);
         line-height: 120%;
         color: #e15544;
     }
@@ -22,20 +24,21 @@
 
 .references-cards {
     display: flex;
-    gap: 32px;
-    width: 1103px;
+    gap: clamp(20px, 3vw, 32px);
+    width: 100%;
+    max-width: 1103px;
     justify-content: space-evenly;
 
     img {
-        width: 60px;
-        height: 97px;
+        width: clamp(40px, 5vw, 60px);
+        height: clamp(65px, 8vw, 97px);
     }
 
     .reference-card {
         width: 297px;
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: clamp(20px, 3vw, 32px);
     }
 }
 
@@ -47,21 +50,150 @@
     h3 {
         color: #e15544;
         font-weight: 700;
-        font-size: 24px;
+        font-size: clamp(20px, 2.5vw, 24px);
         line-height: 120%;
     }
 
     p {
         color: #02f4bf;
         font-weight: 400;
-        font-size: 18px;
+        font-size: clamp(14px, 1.8vw, 18px);
         line-height: 140%;
     }
 }
 
 .reference-text {
     font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(14px, 1.8vw, 18px);
     line-height: 120%;
     color: #02f4bf;
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        padding-left: clamp(10px, 5vw, 20px);
+        padding-right: clamp(10px, 5vw, 20px);
+    }
+
+    .content {
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            font-size: clamp(28px, 5vw, 42px);
+        }
+    }
+
+    .references-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        padding-left: clamp(10px, 3vw, 16px);
+        padding-right: clamp(10px, 3vw, 16px);
+    }
+
+    .content {
+        gap: clamp(15px, 3vw, 20px);
+
+        h2 {
+            font-size: clamp(24px, 5vw, 32px);
+        }
+    }
+
+    .references-cards {
+        gap: clamp(15px, 3vw, 20px);
+
+        img {
+            display: none;
+        }
+    }
+
+    .reference-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .author-info {
+        h3 {
+            font-size: clamp(18px, 4vw, 22px);
+        }
+
+        p {
+            font-size: clamp(12px, 3vw, 14px);
+        }
+    }
+
+    .reference-text {
+        font-size: clamp(12px, 3vw, 14px);
+    }
+}
+
+@media (max-width: 600px) {
+    .references-cards {
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-direction: row;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .reference-card {
+        min-width: 280px;
+        max-width: 280px;
+        height: 233px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .reference-card {
+        border: 1px solid #02f4bf;
+        padding: clamp(15px, 4vw, 20px);
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        h2 {
+            font-size: clamp(20px, 5vw, 24px);
+        }
+    }
+
+    .reference-card {
+        min-width: 260px;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .content {
+        gap: 15px;
+    }
+
+    .reference-card {
+        min-width: 240px;
+        max-width: 240px;
+        padding: 15px;
+    }
 }

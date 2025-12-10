@@ -16,3 +16,18 @@ app-contact-section {
     margin-bottom: 88px;
     height: auto;
 }
+
+@media (max-width: 1024px) {
+    app-myskills-section, app-whyme-section, app-projects-section {
+        margin-top: 56px;
+    }
+
+    app-references-section {
+        margin-top: 45px;
+    }
+
+    app-contact-section {
+        margin-top: 104px;
+        margin-bottom: 64px;
+    }
+}
