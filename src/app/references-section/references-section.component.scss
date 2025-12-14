@@ -4,8 +4,7 @@
 }
 
 .main-container {
-    padding-left: clamp(10px, 5vw, 131px);
-    padding-right: clamp(10px, 5vw, 131px);
+    padding-inline: 131px;
 }
 
 .content {
@@ -25,9 +24,8 @@
 .references-cards {
     display: flex;
     gap: clamp(20px, 3vw, 32px);
-    width: 100%;
-    max-width: 1103px;
     justify-content: space-evenly;
+    align-items: flex-start;
 
     img {
         width: clamp(40px, 5vw, 60px);
@@ -35,10 +33,10 @@
     }
 
     .reference-card {
-        width: 297px;
         display: flex;
         flex-direction: column;
         gap: clamp(20px, 3vw, 32px);
+        height: auto;
     }
 }
 
@@ -69,10 +67,29 @@
     color: #02f4bf;
 }
 
+.header-responsive {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: #e15544;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #e15544;
+    }
+}
+
 @media (max-width: 1024px) {
     .main-container {
-        padding-left: clamp(10px, 5vw, 20px);
-        padding-right: clamp(10px, 5vw, 20px);
+        padding-inline: clamp(10px, 5vw, 20px);
     }
 
     .content {
@@ -80,7 +97,7 @@
         text-align: center;
 
         h2 {
-            font-size: clamp(28px, 5vw, 42px);
+            font-size: clamp(26px, 2vw, 42px);
         }
     }
 
@@ -89,6 +106,10 @@
         align-items: center;
         width: 100%;
         max-width: 500px;
+
+        img {
+            display: none;
+        }
     }
 }
 
@@ -102,12 +123,11 @@
         gap: clamp(15px, 3vw, 20px);
 
         h2 {
-            font-size: clamp(24px, 5vw, 32px);
+            font-size: clamp(21px, 2vw, 32px);
         }
     }
 
     .references-cards {
-        gap: clamp(15px, 3vw, 20px);
 
         img {
             display: none;
@@ -117,9 +137,12 @@
     .reference-card {
         width: 100%;
         max-width: 400px;
+        gap: 16px !important;
     }
 
     .author-info {
+        gap: 4px;
+
         h3 {
             font-size: clamp(18px, 4vw, 22px);
         }
@@ -144,7 +167,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         gap: 20px;
-        padding-bottom: 10px;
+        padding-inline: 8px;
 
         &::-webkit-scrollbar {
             display: none;
@@ -157,24 +180,39 @@
         height: 233px;
         flex-shrink: 0;
         scroll-snap-align: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .reference-card {
         border: 1px solid #02f4bf;
-        padding: clamp(15px, 4vw, 20px);
-        border-radius: 4px;
+        padding: 10px 10px;
+        height: 233px !important;
+    }
+
+    .author-info {
+        h3 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .reference-text {
+        font-size: 16px;
+    }
+
+    .header-responsive {
+        display: flex;
+    }
+
+    .header-desktop {
+        display: none;
+    }
+
+    .content {
+        gap: 25px;
     }
 }
 
 @media (max-width: 480px) {
-    .content {
-        h2 {
-            font-size: clamp(20px, 5vw, 24px);
-        }
-    }
-
     .reference-card {
         min-width: 260px;
         max-width: 260px;
