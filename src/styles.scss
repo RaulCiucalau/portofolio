@@ -31,7 +31,6 @@ body{
 app-root {
     max-width: 1440px;
     width: 100%;
-    overflow-x: hidden;
 }
 
 body {
@@ -49,4 +48,8 @@ html {
 
 section {
     scroll-margin-top: 100px;
+}
+
+div {
+    border: red 0px solid;
 }
