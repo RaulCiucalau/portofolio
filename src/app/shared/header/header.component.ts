@@ -40,9 +40,25 @@ export class HeaderComponent {
   navigateToSection(event: Event, sectionId: string) {
     event.preventDefault();
     this.closeMenu();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    
+    const currentRoute = this.router.url;
+    const isMainPage = currentRoute === '/' || currentRoute === '/de';
+    
+    if (isMainPage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      const targetRoute = this.translationService.getCurrentLanguage() === 'de' ? '/de' : '/';
+      this.router.navigate([targetRoute]).then(() => {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
     }
   }
 }
