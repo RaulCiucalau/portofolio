@@ -51,6 +51,7 @@ export class TranslationService {
       'contact.form.message': 'Your Message',
       'contact.privacy': 'I\'ve read the <a href="/privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.',
       'contact.send': 'Send',
+      'contact.success': 'Thank you for your message! I will respond as soon as possible.',
       
       // Header
       'header.whyme': 'Why me',
@@ -145,6 +146,7 @@ export class TranslationService {
       'contact.form.message': 'Deine Nachricht',
       'contact.privacy': 'Ich habe die <a class="checkbox-link" href="/privacy-policy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
       'contact.send': 'Senden',
+      'contact.success': 'Vielen Dank für deine Nachricht! Ich werde so schnell wie möglich antworten.',
       
       // Header
       'header.whyme': 'Warum ich',

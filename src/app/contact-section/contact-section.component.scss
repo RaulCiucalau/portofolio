@@ -151,6 +151,17 @@
         }
     }
 
+    .success-message {
+        color: #02F4BF;
+        font-family: 'Roboto Mono';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        margin-top: 16px;
+        animation: fadeIn 0.3s ease-in;
+    }
+
+
     .input-field,
     .textarea-field {
         background: transparent;
@@ -396,6 +407,12 @@
         }
     }
 
+    .success-message {
+        font-size: 14px;
+        margin-top: 12px;
+        text-align: center;
+    }
+
     .contact-info {
         display: flex;
         align-items: center;
@@ -459,6 +476,12 @@
     .form-inputs {
         width: 100%;
         gap: 16px !important;
+    }
+
+    .success-message {
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 0 10px;
     }
 
     .textarea-field {

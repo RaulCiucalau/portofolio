@@ -21,26 +21,31 @@ export class ContactSectionComponent {
 
   privacyAccepted = false;
 
-  mailTest = true;
+  mailTest = false;
+
+  emailSent = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://raul-ciucalau.developerakademie.net/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'text/plain',
-        responseType: 'text',
       },
+      responseType: 'text' as 'text',
     },
   };
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
         .subscribe({
           next: (response) => {
-
+            this.emailSent = true;
             ngForm.resetForm();
+            setTimeout(() => {
+              this.emailSent = false;
+            }, 5000);
           },
           error: (error) => {
             console.error(error);
@@ -48,8 +53,11 @@ export class ContactSectionComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      this.emailSent = true;
       ngForm.resetForm();
+      setTimeout(() => {
+        this.emailSent = false;
+      }, 5000);
     }
   }
 

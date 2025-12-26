@@ -8,6 +8,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         exit;
         case("POST"): //Send the email;
             header("Access-Control-Allow-Origin: https://raul-ciucalau.developerakademie.net");
+            header("Content-Type: text/plain");
+            
             // Payload is not send to $_POST Variable,
             // is send to php:input as a text
             $json = file_get_contents('php://input');
@@ -20,16 +22,22 @@ switch ($_SERVER['REQUEST_METHOD']) {
     
             $recipient = 'ciucalauraul@gmail.com';  
             $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br>" . $message ;
+            $message = "From: " . $name . "<br>" . $message;
     
             $headers   = array();
             $headers[] = 'MIME-Version: 1.0';
             $headers[] = 'Content-type: text/html; charset=utf-8';
-
-            // Additional headers
             $headers[] = "From: noreply@raul-ciucalau.developerakademie.net";
+            $headers[] = "Reply-To: " . $email;
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
+            $mailSent = mail($recipient, $subject, $message, implode("\r\n", $headers));
+            
+            if ($mailSent) {
+                echo "Email sent successfully";
+            } else {
+                http_response_code(500);
+                echo "Failed to send email";
+            }
             break;
         default: //Reject any non POST or OPTIONS requests.
             header("Allow: POST", true, 405);
